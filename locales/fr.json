@@ -1,0 +1,392 @@
+{
+  "layout": {
+    "header": {
+      "account_view_link": "Mon compte",
+      "account_logout_link": "Se déconnecter",
+      "back": "Retour",
+      "follow": "Suivre le Chef"
+    }
+  },
+  "popup": {
+    "close": "Fermer"
+  },
+  "home": {
+    "play_video": "Lancer la vidéo",
+    "more_details": "En savoir plus",
+    "view_product": "Voir le produit",
+    "view_collection": "Voir la collection",
+    "view_blog": "Voir le blog",
+    "follow_other_feeds": "Suivre d'autres actualités",
+    "news_panel": {
+      "follow_facebook": "Suivre le Chef sur Facebook",
+      "follow_instagram": "Suivre le Chef sur Instagram",
+      "follow_twitter": "Suivre le Chef sur Twitter",
+      "follow_tumblr": "Suivre le Chef sur Tumblr",
+      "view_instagram": "Voir sur Instagram",
+      "read_more": "En savoir plus",
+      "view_other": "Voir plus",
+      "view_blog": "Lire plus",
+      "follow_blog": "Voir le blog du Chef",
+      "view_facebook": "Voir sur Facebook",
+      "view_twitter": "Voir sur Twitter",
+      "view_tumblr": "Voir sur Tumblr"
+    },
+    "onboarding": {
+      "collection_title": "Collection",
+      "product_title": "Produit",
+      "vendor": "Vendeur",
+      "no_content": "Aucun produit",
+      "featured_product": {
+        "title": "Produit",
+        "description": "Description",
+        "compare_price": "$99",
+        "actual_price": "$89"
+      },
+      "price": "$50.00"
+    },
+    "map": {
+      "address": "Adresse ",
+      "hours": "Heures d'ouverture",
+      "open_in_maps": "Ouvrir dans Maps",
+      "address_error": "Adresse erronée",
+      "address_no_results": "Aucune adresse",
+      "no_api_key_html": "Pour générer une map il faudra ajouter <a href=\"https:\/\/developers.google.com\/maps\/documentation\/javascript\/get-api-key#get-an-api-key\">Google API key<\/a>Dans General > Physical store settings. \n"
+    },
+    "newsletter": {
+      "email_placeholder": "Votre email",
+      "success": "Merci pour votre inscription",
+      "button": "S'inscrire"
+    },
+    "featured_blog": {
+      "title": "Article de blog",
+      "read_more": "Lire plus"
+    },
+    "featured_product": {
+      "more_info": "Voir le produit"
+    }
+  },
+  "collections": {
+    "sold_out_html": "Epuisé",
+    "from": "A partir de",
+    "no_products_link": "Cliquez ici pour ajouter des produits",
+    "no_collections_link": "Cliquez ici pour ajouter une collection",
+    "product": "Produit",
+    "products": "Produits",
+    "placeholder": {
+      "title": "",
+      "collection_title": "Collection",
+      "price": "",
+      "num_items": ""
+    },
+    "no_products_feedback_html": "",
+    "no_collections_feedback_html": ""
+  },
+  "products": {
+    "add_to_cart": "Ajouter au panier",
+    "more_details": "Plus d'informations",
+    "unavailable_variant": "Cette option est indisponible pour le moment",
+    "sold_out": {
+      "variant": "Cette option est actuellement indisponible",
+      "product": "Ce produit est actuellement indisponible",
+      "form_notification": "Merci ! Nous vos indiquerons lorsqu'il sera de nouveau disponible",
+      "form_description": "Si vous souhaitez recevoir une alerte lorsque le produit sera à nouveau disponible, merci de remplir le formulaire.",
+      "feedback_invalid_email": "Merci d'indiquer une adresse email valide",
+      "email_placeholder": "Mon email",
+      "email_description": "M'envoyer un mail lorsque ce produit est à nouveau disponible",
+      "button": "Envoyer"
+    },
+    "no_product_feedback_html": "Aucun produit"
+  },
+  "cart": {
+    "title": "Mon panier",
+    "go_to_cart": "Voir mon panier",
+    "continue": "Continuer mes achats",
+    "empty_html": "<span class=\"colored-links\">Votre panier est vide. <a href=\"\/\">Cliquez ici<\/a> pour continuer vos achats<\/span>",
+    "checkout": "Valider",
+    "update_cart": "Actualiser mon panier",
+    "subtotal": "Sous-total",
+    "remove_item": "Supprimer ce produit",
+    "remove_one_item": "Supprimer un produit",
+    "add_one_item": "Ajouter un produit",
+    "shipping_taxes_notification": "Frais de livraison et taxes calculées à la fin du processus de commande",
+    "order_notes": "Laisser un commentaire"
+  },
+  "contact_page": {
+    "success_feedback": "Filtrer par",
+    "name": "Votre nom",
+    "email": "Email",
+    "phone": "Numéro de téléphone",
+    "message": "Message",
+    "button": "Envoyer",
+    "error_feedback": "Nous n'avons pas pu envoyer votre message. merci de corriger:"
+  },
+  "customer": {
+    "account": {
+      "page_title": "Mon compte",
+      "orders": "Commandes",
+      "addresses": "Adresse",
+      "order": "Commande",
+      "date": "Date",
+      "payment_status": "Statut de paiement",
+      "total": "Total",
+      "no_orders": "Vous n'avez aucun produit dans votre panier",
+      "view_addresses": "Voir l'adresse",
+      "logout": "Se déconnecter"
+    },
+    "activate_account": {
+      "page_title": "Activer votre compte",
+      "subtext": "Créez votre mot de passe pour activer votre compte",
+      "password": "Mot de passe",
+      "password_confirm": "Confirmation de mot de pass",
+      "submit": "Activer mon compte",
+      "cancel": "Annuler"
+    },
+    "addresses": {
+      "page_title": "Vos adresses",
+      "default": "Adresse principale",
+      "add_new": "Ajouter une nouvelle adresse",
+      "edit_address": "Editer l'adresse",
+      "first_name": "Prénom",
+      "last_name": "Nom",
+      "company": "Entreprise",
+      "address1": "Adresse",
+      "address2": "Adresse",
+      "city": "Ville",
+      "country": "Pays",
+      "province": "Province",
+      "zip": "Code postal",
+      "phone": "Téléphone",
+      "set_default": "Mettre comme adresse par défaut",
+      "add": "Ajouter une adresse",
+      "update": "Mettre à jour l'adresse",
+      "cancel": "Annuler",
+      "edit": "Editer",
+      "delete": "Supprimer"
+    },
+    "login": {
+      "page_title": "Se connecter",
+      "email": "Email",
+      "password": "Mot de passe",
+      "forgot_password": "Mot de passe oublié ?",
+      "new_account": "S'inscrire",
+      "reset_password": "Editer mot de passe",
+      "reset_instructions": "Nous allons vous envoyer un email afin que vous puissiez rééditer votre nouveau mot de passe",
+      "submit": "Ok",
+      "sign_in": "Se connecter",
+      "cancel": "Annuler",
+      "guest_title": "Se connecter en tant qu'invité",
+      "guest_continue": "Continuer en tant qu'invité"
+    },
+    "order": {
+      "page_title": "Continuer en tant qu'invité",
+      "cancelled": "Commande annulée",
+      "billing_address": "Adresse de facturation",
+      "payment_status": "Statut du paiement",
+      "shipping_address": "Votre adresse (utilisée en cas de livraison)",
+      "fulfillment_status": "Fulfillment Status",
+      "item": "Item",
+      "product": "Produit",
+      "price": "Prix",
+      "quantity": "Quantité",
+      "total": "Total",
+      "subtotal": "Sous-total",
+      "paid": "Payé",
+      "pending": "En attente",
+      "authorized": "Autorisé",
+      "abandoned": "Abandonné",
+      "refunded": "Remboursé",
+      "tracking_company": "Société de livraison",
+      "tracking_number": "Numéro de suivi"
+    },
+    "register": {
+      "page_title": "Créer un compte",
+      "first_name": "Prénom",
+      "last_name": "Nom",
+      "email": "Email",
+      "password": "Mot de passe",
+      "submit": "Créer un compte",
+      "login": "Se connecter à un compte existant"
+    },
+    "reset_password": {
+      "page_title": "Formulaire de réédition du mot de passe",
+      "password": "Nouveau mot de passe",
+      "password_confirmation": "Confirmation du nouveau mot de passe",
+      "submit": "Rééditer le mot de passe"
+    }
+  },
+  "general": {
+    "404": {
+      "page_title": "Page introuvable",
+      "intro": "Nous sommes navrés, mais la page demandée n'est plus disponible.",
+      "return_links_html": ""
+    },
+    "breadcrumbs": {
+      "home": "Accueil",
+      "collections": "Collections",
+      "product": "Produit",
+      "products": "Produits",
+      "account": "Compte",
+      "register": "Créer un compte",
+      "addresses": "Adresse",
+      "activate_account": "Activer mon compte"
+    },
+    "pagination": {
+      "previous": "Précédent",
+      "next": "Suivant",
+      "page": "Page",
+      "of": "Of"
+    },
+    "search": {
+      "articles": "Articles",
+      "no_results": "Aucun résultat",
+      "products": "Produits",
+      "results_for": "Résultats pour",
+      "search": "Rechercher",
+      "placeholder": "Rechercher sur le site",
+      "search_again": "Nouvelle recherche",
+      "view_all": "Tout voir"
+    },
+    "mailing_list": {
+      "subtitle": "Abonnez-vous à la newsletter du Chef !",
+      "placeholder": "Adresse Email",
+      "button": "Valider",
+      "success_message": "Merci pour votre abonnement !",
+      "email_blank": "Le champ d'adresse Email est requis"
+    },
+    "password": {
+      "login_link": "Se connecter",
+      "powered_by_shopify_html": "  ",
+      "title": "Ouverture imminente",
+      "login_button": "Entrer",
+      "login_cancel": "Retour",
+      "login_placeholder": "Mot de passe",
+      "login_title": "Entrer le code"
+    },
+    "social": {
+      "product_title": "Partagez avec vos amis !",
+      "blog_title": "Partager",
+      "facebook_title": "Partager sur Facebook",
+      "twitter_title": "Partager sur Twitter",
+      "pinterest_title": "Partager sur Pinterest",
+      "google_title": "Partager sur Google Plus",
+      "email_title": "Partager via email",
+      "link_title": "Copier le lien"
+    }
+  },
+  "date_formats": {
+    "month_day_year": "%d%B %Y"
+  },
+  "blog": {
+    "filtered_by": "Filtrer par",
+    "article": {
+      "no_articles": "Aucun article",
+      "date": "Date",
+      "back_to_blog": "Retour au blog",
+      "twitter": "Twitter",
+      "written_by": "Ecrit par",
+      "comment": "Commentaire",
+      "comments": "Commentaires",
+      "read_more": "Lire plus",
+      "previous": "Précédent",
+      "next": "Suivant",
+      "tags": "Tags"
+    },
+    "comment": {
+      "title": "Laisser un commentaire",
+      "moderated_notice": "Votre commentaire doit être approuvé avant d'être publié",
+      "moderated_feedback": "Merci pour votre commentaire",
+      "success_feedback": "Merci, votre commentaire a été posté",
+      "error": "Tous les champs doivent être remplis",
+      "your_name": "Votre nom",
+      "your_email": "Votre mail"
+    },
+    "sidebar": {
+      "tags": "Tags",
+      "tags_show_all": "Tous"
+    }
+  },
+  "gift_cards": {
+    "issued": {
+      "title": "Voici votre coupon",
+      "subtext": "Voici votre coupon",
+      "expired": "Expiré",
+      "shop_link": "Aller en boutique",
+      "print": "Imprimer",
+      "left": "Laisser",
+      "active": "Expire le",
+      "redeem": "Utilisez ce code lors du passage en caisse pour recevoir votre cadeau",
+      "disabled": "Désactiver"
+    }
+  },
+  "pagefly": {
+    "products": {
+      "product": {
+        "regular_price": "Prix",
+        "sold_out": "Epuisé",
+        "unavailable": "Indisponible",
+        "on_sale": "En vente",
+        "quantity": "Quantité",
+        "add_to_cart": "Ajouter au panier",
+        "back_to_collection": "Retour à la collection"
+      }
+    },
+    "article": {
+      "tags": "Tags",
+      "all_topics": "Tous les topics",
+      "by_author": "par",
+      "posted_in": "Posté",
+      "read_more": "Lire plus",
+      "back_to_blog": "Retour au blog"
+    },
+    "comments": {
+      "title": "Laisser un commentaire",
+      "name": "Nom",
+      "email": "Email",
+      "message": "Message",
+      "post": "Poster un commentaire",
+      "moderated": "Votre commentaire doit être approuvé avant d'être publié",
+      "success": "Votre commentaire a été posté"
+    },
+    "password_page": {
+      "login_form_password_label": "Mot de passe",
+      "login_form_password_placeholder": "Votre mot de passe",
+      "login_form_submit": "Entrer",
+      "signup_form_email_label": "Email",
+      "signup_form_success": "Nous vous enverrons un email avant l'ouverture",
+      "password_link": "Entrez votre mot de passe"
+    }
+  },
+  "shopify": {
+    "checkout": {
+      "contact": {
+        "shipping_address_title": "Adresse de livraison"
+      },
+      "general": {
+        "continue_to_shipping_method": "Continuer vers le mode d'expédition\/de retrait"
+      },
+      "payment": {
+        "same_billing_address_label": "Identique à l'adresse précédemment indiquée (utilisée pour la livraison si vous avez choisi ce mode) "
+      },
+      "thank_you": {
+        "thank_you_description": "Nous avons accepté votre commande et nous vous en remercions.",
+        "shipping_address_title": "Vos coordonnées",
+        "marker": {
+          "shipping": "Vos coordonnées"
+        }
+      },
+      "shipping": {
+        "title": "Récapitulatif mode de retrait\/envoi",
+        "shipping_method_title": "Récapitulatif mode de retrait\/envoi"
+      },
+      "review": {
+        "blocks": {
+          "shipping_address_title": "Adresse de livraison"
+        },
+        "title": "Résumé de commande"
+      },
+      "alternative_payment_method_banner": {
+        "express_checkout": "Paiement rapide"
+      }
+    }
+  }
+}

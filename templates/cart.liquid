@@ -1,0 +1,245 @@
+<script src="https://cdn.jsdelivr.net/npm/js-cookie@beta/dist/js.cookie.min.js"></script>
+
+<div class="wrapper">
+  <div class="panel">
+    {% assign token = cart.token  %}
+    {% if cart.item_count > 0 %}
+
+      <div>
+
+        <form id="cart_form" action="/cart" method="post" novalidate="" class="">
+          <div class="content fw--blocks spacing--2y">
+            {% for item in cart.items %}
+              <div class="variant-id width--12 {% if forloop.last %}last-variant{% endif %}" data-variant-id="{{ item.variant_id }}">
+
+                <div class="width--12 width--medium-4 width--large-6 block">
+                  <span class="image block width--4 width--medium-12 width--large-4 spacing--3">
+                    <a href="{{ item.url | within: collections.all }}">
+                      {% include "framework--image", image: item.image %}
+                    </a>
+                  </span>
+                  <span class="title block width--8 spacing--3 font--size-4 show--small show--large">
+                    <a href="{{ item.url }}">{{ item.title }}</a>
+
+                    {% assign property_size = item.properties | size %}
+                    {% if property_size > 0 %}
+                      {% for p in item.properties %}
+                        {% unless p.last == blank or p.first == "_ZapietId" or p.first == 'urbit_token' %}
+                          {{ p.first }}:
+
+
+
+                          {% comment %}
+                            Check if there was an uploaded file associated
+                          {% endcomment %}
+                          {% if p.last contains '/uploads/' %}
+                            <a href="{{ p.last }}">{{ p.last | split: '/' | last }}</a>
+                          {% else %}
+                            {{ p.last }}
+                          {% endif %}
+
+                          <br>
+                        {% endunless %}
+                      {% endfor %}
+                    {% endif %}
+
+                  </span>
+                </div>
+
+                <div class="right-column width--12 width--medium-8 width--large-6 block spacing--3y text-align--left text-align--large-right">
+
+                  <span class="title block width--12 spacing--3 font--size-4 show--medium text-align--left">
+                    <a href="{{ item.url }}">{{ item.title }}</a>
+
+                    {% assign property_size = item.properties | size %}
+                    {% if property_size > 0 %}
+                      {% for p in item.properties %}
+                        {% unless p.last == blank %}
+                          {{ p.first }}:
+
+                          {% comment %}
+                            Check if there was an uploaded file associated
+                          {% endcomment %}
+                          {% if p.last contains '/uploads/' %}
+                            <a href="{{ p.last }}">{{ p.last | split: '/' | last }}</a>
+                          {% else %}
+                            {{ p.last }}
+                          {% endif %}
+
+                          <br>
+                        {% endunless %}
+                      {% endfor %}
+                    {% endif %}
+                  </span>
+
+                  <span class="price spacing--3 font--size-3 money">{{ item.price | money }}</span>
+                  <span class="quantity spacing--3">
+                    <div class="input--number">
+                      <input type="text" name="updates[]" id="updates_{{ item.id }}" value="{{ item.quantity }}" min="1" pattern="[1-9]*" />
+                    </div>
+                  </span>
+                  <span class="remove spacing--3">
+                    <a
+                      href="/cart/change?line={{ forloop.index }}&quantity=0"
+                      aria-hidden="true"
+                      class="cart--remove-button remove"
+                      aria-label="{{ 'cart.remove_item' | t }}">
+                      {% include 'snippet-symbol' with 'cross-circle' %}
+                    </a>
+                  </span>
+                </div>
+              </div>
+              <div class="spacer spacing--3y"></div>
+            {% endfor %}
+
+            <h1>{{ token }}</h1>
+            <div class="text-align--center text-align--large-right">
+              <input id="update" type="button" class="button font--accent" value="{{ 'cart.update_cart' | t }}" />
+            </div>
+            <script>
+              $('#update').click(function() {
+                CartJS.getCart({
+                    "success": function(data, textStatus, jqXHR) {
+                      var old_cart = data
+                      console.log(old_cart.token);
+                      Cookies.set('cart','')
+
+                      CartJS.clear({
+                          "success": function(data, textStatus, jqXHR) {
+                            var data_update = {}
+                            old_cart.items.forEach(function(item){
+                              data_update[item.variant_id] =  $('#updates_'+item.variant_id).val()
+                            })
+                            CartJS.updateItemQuantitiesById(data_update, {
+                                  "success": function(data, textStatus, jqXHR) {
+                                    location.reload()
+                                  },
+                                  "error": function(jqXHR, textStatus, errorThrown) {
+                                    var data_update = {}
+                                    old_cart.items.forEach(function(item){
+                                      data_update[item.variant_id] = item.quantity
+                                    })
+                                    CartJS.updateItemQuantitiesById(data_update)
+                                    alert('La quantité demandée est indisponible!');
+                                  }
+                              });
+
+                          },
+                          "error": function(jqXHR, textStatus, errorThrown) {
+                              alert('Error: ' + errorThrown + '!');
+                          }
+                      })
+                    },
+                    "error": function(jqXHR, textStatus, errorThrown) {
+                        alert('Error: ' + errorThrown + '!');
+                    }
+                })
+                // var old_cart = CartJS.cart
+                // console.log(old_cart.token);
+
+                // CartJS.cart.clear
+                // console.log(CartJS.cart);
+                // old_cart.items.forEach(function(item) {
+                //   console.log(item);
+                //   // CartJS.addItem(item.id, quantity = item.quantity, properties = item.properties)
+                // })
+              })
+            </script>
+
+            <div class="totals width--12 text-align--center ">
+              <div class="width--12 width--large-8 block"></div>
+              <div class="block spacing--3y width--12 width--large-4 font--size-3 text--bold text-align--large-right text--uppercase">
+                <span class="spacing--3">{{ 'cart.subtotal' | t }}</span>
+                <span class="total spacing--3 money">{{ cart.total_price | money }}</span>
+              </div>
+            </div>
+            <div class="spacer spacing--3y show-for-small-medium"></div>
+          </div>
+          
+ <!-- Zapiet | Store Pickup + Delivery -->
+          {% assign cart_contains_gift_card = false %}
+          {% assign cart_contains_physical_items = false %}
+          {% assign cart_desactivate_urbit = false %}
+
+
+          {% for item in cart.items %}
+           {% if item.product.handle contains "atelier" or item.product.handle contains "atelier" or item.product.handle contains "gift-card" or item.product.handle contains "conference"%}
+             {% assign cart_contains_gift_card = true %}
+           {% else %}
+             {% assign cart_contains_physical_items = true %}
+           {% endif %}
+
+
+
+           {% for tag in  item.product.tags %}
+
+              {% if tag == "not_urbit" %}
+                {% assign cart_desactivate_urbit = true %}
+              {% endif %}
+           {% endfor %}
+          {% endfor %}
+
+          {% if cart_contains_physical_items %}
+          {% unless cart_desactivate_urbit %}
+             {% comment %}
+              ----URBIT-----
+              {% endcomment %}
+              {% assign custom_urbit = true %}
+              <div>
+                {% include 'urbit' with custom_urbit %}
+              </div>
+              {% comment %}
+              ----URBIT----
+              {% endcomment %}
+          {% endunless %}
+          <div id="storePickupApp"></div>
+          {% endif %}
+          <!-- Zapiet | Store Pickup + Delivery -->
+          <div class="fw--blocks">
+            <div class="order-notes width--large-6 text-align--center">
+              {% if settings.cart--show-note %}
+                <p class="text-align--center text-align--large-left">{{ 'cart.order_notes' | t }}</p>
+                <textarea name="note">{{ note }}</textarea>
+                <div class="spacer spacing--4y show-for-small-medium"></div>
+              {% endif %}
+
+            </div>
+
+            <div class="width--large-6">
+              <p class="text-align--center text-align--large-right">{{ 'cart.shipping_taxes_notification' | t }}</p>
+              <div class="spacer spacing--2y"></div>
+
+              <div class="fw--blocks spacing--3 compact--3x list text-align--center text-align--large-right">
+                <div><a class="continue-shopping text--underline text--uppercase" href="{{ shop.url }}">{{ 'cart.continue' | t }}</a></div>
+                <div><button type="submit" name="checkout" class="button checkout font--accent">{{ 'cart.checkout' | t }}</button></div>
+                {% if additional_checkout_buttons %}
+                  <br />
+                  <div class="additional-checkout-buttons">
+                    <!-- Zapiet | Store Pickup + Delivery -->
+{% comment %}{{ content_for_additional_checkout_buttons }}{% endcomment %}
+<!-- Zapiet | Store Pickup + Delivery -->
+                  </div>
+                {% endif %}
+
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+
+    {% else %}
+      <p class="notification--empty spacing--5">{{ 'cart.empty_html' | t }}</p>
+
+    {% endif %}
+
+  </div>
+</div>
+
+
+
+
+
+
+
+
+<script src="https://cdn.pagefly.io/static/assets/pf-custom-shopify-cart.min.js" defer></script>

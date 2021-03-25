@@ -1,0 +1,151 @@
+{% assign view = partial--product %}
+{% assign has_hover = false %}
+{% if product.images.size > 1 and advanced--collection--hover-image %}
+  {% assign has_hover = true %}
+{% endif %}
+
+{% if view == 'product-page' %}
+
+  <div class="partial--product view--full" data-view="product-page" itemscope itemtype="http://schema.org/Product" data-handle="{{ product.handle }}" data-id="{{ product.id }}" data-variants-size="{{ product.variants.size }}">
+    <meta itemprop="url" content="{{ shop.url }}{{ product.url }}" />
+    <meta itemprop="name" content="{{ product.title }}" />
+    <meta itemprop="image" content="{{ product.featured_image.src | product_img_url: '1000x' }}" />
+    <script>theme.product_json[{{ product.id }}] = {{ product | json }}; </script>
+
+    <div class="details">
+
+      <div class="add-to-cart{% unless product.variants.size > 1 %} no-variants{% endunless %}">
+        {% form 'product', product %}
+          <div class="product-page--cart-container">
+
+
+            <div class="product-page--cart--column-a">
+
+              <div class="title-below">
+                <div class="spacing--3x show--small-medium"><a class="title" href="{{ product.url }}"><h1 class="font--heading">{{ product.title }}</h1></a></div>
+
+                {% unless section.settings.position-title-above %}
+                  <div class="spacing--3x show--large"><a class="title" href="{{ product.url }}"><h1 class="font--heading">{{ product.title }}</h1></a></div>
+                {% endunless %}
+              </div>
+
+              <div class="price font--accent font--subheading--size" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+                  <meta itemprop="priceCurrency" content="{{ shop.currency }}" />
+                  {% if product.available %}
+                    <link itemprop="availability" href="http://schema.org/InStock" />
+                  {% else %}
+                    <link itemprop="availability" href="http://schema.org/OutOfStock" />
+                  {% endif %}
+
+                  {% assign price_meta = product.selected_or_first_available_variant.price | divided_by: 100.00 %}
+                  <meta itemprop="price" content="{{ price_meta }}">
+
+                  {% if product.price > 0 %}
+                    <span class="compare-price money">{% if product.compare_at_price > product.price and product.available %}{{ product.compare_at_price | money }}{% endif %}</span>
+                    <span class="actual-price money">{{ product.price | money }}</span>
+                  {% endif %}
+              </div>
+
+              <span class="selector-toggle {% unless product.variants.size > 1 %}hide-for-all{% endunless %}">
+                <select name="id" id="product-select-{{ product.id }}">
+                  {% for variant in product.variants %}
+                    <option data-sku="{{ variant.sku }}" {% if variant.inventory_quantity <= 0 and variant.available == false %}DISABLED {% endif %}{% if variant == product.selected_or_first_available_variant %}selected="selected" {% endif %} value="{{ variant.id }}">{{ variant.title }} - {{ variant.price | money }}</option>
+                  {% endfor %}
+                </select>
+              </span>
+
+              {% assign variant = product.selected_or_first_available_variant %}
+
+              <span class="{% unless product.available %} disabled{% endunless %}">
+                <input type="hidden" name="quantity" value="1">
+              </span>
+            </div>
+
+            <div class="product-page--cart--column-b">
+              {% if product.available == false %}
+                <span class="sold-out font--accent font--subheading--size color--important">{{ 'collections.sold_out_html' | t }}</span>
+              {% endif %}
+
+              <span class="{% unless product.available %} disabled{% endunless %}">
+
+                {% if template contains 'kickstarter' %}
+                  <a href="{{ settings.social--kickstarter--url }}" class="button"><span class="text">{{ 'products.back_on_kickstarter' | t }}</span></a>
+                {% else %}
+
+                  {% assign cart_button_class = 'button' %}
+                  {% if section.settings.smart_payment_button %}
+                    {% assign cart_button_class = 'button--secondary' %}
+                  {% endif %}
+
+                  {% if product.available %}
+                    <button class="add {{ cart_button_class }}" type="submit" name="add" id="add"><span class="text">{{ 'products.add_to_cart' | t }}</span><span class="fw--loading_animation tiny" data-js-class="FrameworkLoadingAnimation"></span></button>
+                  {% endif %}
+                {% endif %}
+              </span>
+
+              {% if section.settings.smart_payment_button and product.available %}
+                <div class="product-page--smart-payment-buttons">
+                  {{ form | payment_button }}
+                </div>
+              {% endif %}
+            </div>
+          </div>
+        {% endform %}
+      </div>
+
+      {% include 'partial--product--unavailable' %}
+
+    </div>
+  </div>
+
+{% else %} {% comment %} Grid or Collage View{% endcomment %}
+
+  <div class="product--root">
+    <div class="partial--product view--{{ view }} index--{{ odd_or_even }}{% if has_hover %} has-hover{% endif %}" data-view="{{ view }}">
+
+      <div class="product--image-wrapper">
+        <div class="product--image">
+          <a class="image-wrapper" href="{{ product.url | within: collection  }}" title="{{ product.title }}">
+            {% include "framework--image", image: product.featured_image, full_width: true %}
+          </a>
+        </div>
+      </div>
+
+      <div class="caption">
+        <a href="{{ product.url | within: collection  }}" title="{{ product.title }}">
+          <h2 class="title font--subheading">
+            {{ product.title }}
+          </h2>
+        </a>
+
+        {% if section.settings.show-vendor %}
+          {% assign product_vendor_handle = product.vendor | handle %}
+          {% if collections[product_vendor_handle].handle == product_vendor_handle %}
+            {% assign vendor_url = collections[product_vendor_handle].url %}
+          {% else %}
+            {% assign vendor_url = product.vendor | url_for_vendor %}
+          {% endif %}
+          <p class="vendor">{{ product.vendor | link_to: vendor_url }}</p>
+        {% endif %}
+
+        <a href="{{ product.url | within: collection  }}" title="{{ product.title }}">
+          <p class="price font--accent">
+            {% if product.price > 0 %}
+              {% if product.compare_at_price > product.price and product.available %}
+                <span class="compare-price money">{{ product.compare_at_price | money }}</span>
+                <span class="actual-price money">{{ product.price | money }}</span>
+              {% else %}
+                {% if product.price_varies %}{{ 'collections.from' | t }}{% endif %} <span class="actual-price money">{{ product.price | money }}</span>
+              {% endif %}
+            {% endif %}
+
+            {% if product.available == false %}
+              <span class="sold-out font--accent">{{ 'collections.sold_out_html' | t }}</span>
+            {% endif %}
+          </p>
+        </a>
+      </div>
+
+    </div>
+  </div>
+{% endif %}

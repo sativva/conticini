@@ -1,0 +1,147 @@
+{% comment %}Copy following content and paste to sections/collection.liquid file{% endcomment %}
+
+{% assign products_per_page = 24 %}
+{% if section.settings.show-featured-product  %}
+  {% assign products_per_page = products_per_page | plus: 1 %}
+{% endif %}
+{% paginate collection.products by products_per_page %}
+
+{% assign products_per_row = section.settings.products-per-row-range %}
+{% assign column_width = 12 | divided_by: products_per_row %}
+
+{% assign show_title = false %}
+{% if collection.title.size > 0 %}
+  {% assign show_title = true %}
+{% endif %}
+
+{% assign show_featured_image = false %}
+{% if section.settings.show-featured-image and collection.image %}
+  {% assign show_featured_image = true %}
+{% endif %}
+
+{% assign show_description = false %}
+{% if collection.description.size > 0 %}
+  {% assign show_description = true %}
+{% endif %}
+
+<div data-section-id="{{ section.id }}" data-section-type="collection_page" data-js-class="CollectionPage">
+
+  {% if show_title or show_featured_image or show_description %}
+    <header class="text-align--center">
+      {% if show_featured_image %}
+        <div class="image-title-wrapper">
+          <div class="featured-image">
+            {%
+              include "framework--image",
+              image: collection.image,
+              full_width: true
+            %}
+          </div>
+
+          {% if show_title %}
+          <h1 class="page-title with-image font--heading fw--align--center-y">{{ collection.title }}</h1>
+          {% endif %}
+        </div>
+      {% endif %}
+
+      {% unless show_featured_image %}
+        <h1 class="page-title font--heading">{{ collection.title }}</h1>
+      {% endunless %}
+
+      {% if show_description %}
+        <div class="description text-align--center spacing--4y font--size-4 wide">
+          {{ collection.description }}
+        </div>
+      {% endif %}
+      <div class="spacer spacing--5y show--medium-large"></div>
+    </header>
+
+  {% endif %}
+
+  {% if collection.products.size < 1  %}
+    <div class="no-product text-align--center colored-links">
+      {{ 'collections.no_products_feedback_html' | t }}
+    </div>
+
+    <section class="product-grid layout-type--grid fw--blocks clear-after--medium-3 clear-after--large-3">
+      {% for i in (1..6) %}
+        <div class="block width--medium-4 spacing--3x">
+          <div class="partial--product view--grid">
+            {% include "framework--placeholder", type: "product", aspect_ratio: "800x800", placeholder_index: i %}
+
+            <div class="caption">
+              <h2 class="title font--subheading">
+                {{ 'collections.placeholder.title' | t }}
+              </h2>
+
+              <p class="price font--accent">
+                From <span class="actual-price money">{{ 'collections.placeholder.price' | t }}</span>
+              </p>
+            </div> <!-- .caption -->
+
+          </div> <!-- .partial--product.view--grid -->
+        </div> <!-- .block -->
+       {% endfor %}
+    </section> <!-- .product-grid -->
+
+  {% endif %}
+
+
+  <div class="">
+
+    <section class="product-grid layout-type--grid fw--blocks clear-after--medium-{{ products_per_row }} clear-after--large-{{ products_per_row }}">
+      {% assign row_count = 0 %}
+      {% for product in collection.products %}
+        {% assign view_type = 'grid' %}
+
+        <div class="block width--medium-{{ column_width }} spacing--3x">
+          {% include 'partial--product' with 'grid' %}
+        </div>
+      {% endfor %}
+    </section>
+
+    <div class="spacing--3y"></div>
+
+    {% if paginate.pages > 1 %}
+      <footer>
+        <div class="collection--pagination">
+          {% include 'framework--pagination' %}
+        </div>
+      </footer>
+      <div class="spacing--3y"></div>
+    {% endif %}
+
+  </div>
+  {% endpaginate %}
+
+</div>
+
+{% schema %}
+{
+  "name": "Collection page",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show-featured-image",
+      "label": "Show collection image",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show-vendor",
+      "label": "Show product's vendor name",
+      "default": false,
+      "info": "e.g. Apple, Shopify"
+    },
+    {
+      "label": "Products per row",
+      "id": "products-per-row-range",
+      "type": "range",
+      "min": 1,
+      "max": 4,
+      "step": 1,
+      "default": 3
+    }
+  ]
+}
+{% endschema %}

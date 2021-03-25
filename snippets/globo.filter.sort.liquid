@@ -1,0 +1,13 @@
+{% raw %}
+<div class="gf-sort-wrap">
+  <h3 href="javascript:void(0)" class="gf-refine-toggle-mobile" tabindex="0" aria-label="Filtrer par">
+    <span onclick="globofilter.toggleCanvas()"><i class="fa fa-tasks" aria-hidden="true"></i> Filtrer par</span>
+    <a onclick="clearAllFilter()" href="javascript:;" class="gf-refine-toggle visible-xs">Effacer tout</a>
+  </h3>
+          <div class="sort-by limit-by">
+    <label for="setLimit" class="sort-by-toggle" role="button" tabindex="0" aria-expanded="false">Nombre de produits par page</label>
+    <select id="setLimit" class="sortby-select" onchange="setLimit(this.value); return false;">
+      <option selected value="12">12</option><option  value="24">24</option><option  value="48">48</option>    </select>
+  </div>
+    </div>
+{% endraw %}

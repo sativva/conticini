@@ -1,0 +1,63 @@
+{% raw %}
+  {% assign swatch_options = '' | downcase | replace: ', ', ',' | split: ","  %}
+  {% assign images_count = product.images | size %}
+  {% assign variants_count = product.variants | size %}
+  {% assign options_count   = product.options | size %}
+  {% assign featured_image = 'https://cdn.shopify.com/s/images/themes/product-1.png' %}
+  {% if product.featured_image %}
+    {% assign featured_image = product.featured_image.src %}
+  {% endif %}
+
+            <div class="spf-col-xl-4 spf-col-lg-4 spf-col-md-6 spf-col-sm-6 spf-col-6">
+        <div class="spf-product-card spf-product-card__template-2{% unless product.available %} spf-soldout{% endunless %}">
+          <div class="spf-product-card__inner">
+            {% unless product.available %}
+                        <span class="spf-product__label spf-product__label-soldout">Victime de son succès !</span>
+                                    {% endunless %}
+                          <a title="Quick view" href="javascript:;" onclick="globofilter.quickView('{{product.url}}')" class="open-quick-view"><span>Quick view</span></a>
+                        {% assign images_count = product.images | size %}
+            <a class="spf-product-card__image-wrapper{% if images_count > 1 %} hover-effect{% endif %}" href="{{product.url}}" style="padding-top:100%; padding-top:100%;">
+              {% if images_count > 0 %}
+              {% for image in product.images %}
+              <img data-variants="{{image.variant_ids | join: ','}}" class="spf-product-card__image spf-product-card__image-{% if product.featured_image.id == image.id %}main{% elsif forloop.index == 2 %}secondary{% else %}hidden{% endif %}" src="{{image.src | img_url: '750x750' }}" alt="{{image.alt}}">
+              {% endfor %}
+              {% else %}
+              <img data-variants="" class="spf-product-card__image spf-product-card__image-main" src="https://cdn.shopify.com/s/images/themes/product-1.png" alt="{{product.title}}">
+              {% endif %}
+            </a>
+            {% if images_count > 1 %}
+            <div class="spf-product-card__images-navigation">
+              <span class="image-navigation prev"><i class="fa fa-angle-left" aria-hidden="true"></i></span>
+              <span class="image-navigation next"><i class="fa fa-angle-right" aria-hidden="true"></i></span>
+            </div>
+            {% endif %}
+          </div>
+
+          <div class="spf-product__info">
+            <div class="h4 spf-product-card__title"><a href="{{product.url}}">{{product.title}}</a></div>
+                                                <div class="spf-product-card__price-wrapper">
+              {% if product.compare_at_price > product.price %}
+              <span class="spf-product-card__oldprice">{{ product.compare_at_price | money }}</span>
+              <span class="spf-product-card__saleprice">{{ product.price | money }}</span>
+              {% else %}
+              <span class="spf-product-card__price">{{ product.price | money }}</span>
+              {% endif %}
+            </div>
+                                  </div>
+
+          <form class="spf-product__form" action="/cart/add" method="post">
+            {% assign mono = product.variants | size  %}
+
+
+              <select name="id" class="spf-product__variants" {% if mono == "1" %}class="hidden" style="opacity: 0"{% endif %}>
+
+              {% for variant in product.variants %}
+              <option  data-price="{{variant.price}}" data-compare_at_price="{{variant.compare_at_price}}" data-available="{{variant.available}}" data-image="{{variant.image.src}}" {% if variant.id == product.first_available_variant.id %} selected="selected" {% endif %} value="{{ variant.id }}" >{{ variant.title }}</option>
+              {% endfor %}
+            </select>
+                        <button {% unless product.available %}disabled{% endunless %} type="submit" class="spf-product__form-btn-addtocart" data-available="Ajouter au panier" data-soldout="Victime de son succès !" data-unavailable="Non disponible"><i class="fa fa-shopping-bag" aria-hidden="true"></i><span>{% if product.available %}Ajouter au panier{% else %}Victime de son succès !{% endif %}</span><svg x="0px" y="0px" width="32px" height="32px" viewBox="0 0 32 32" class="checkmark"> <path fill="none" stroke-width="2" stroke-linecap="square" stroke-miterlimit="10" d="M9,17l3.9,3.9c0.1,0.1,0.2,0.1,0.3,0L23,11"></path></svg></button>
+                      </form>
+
+        </div>
+      </div>
+      {% endraw %}

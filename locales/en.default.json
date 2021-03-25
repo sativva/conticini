@@ -1,0 +1,563 @@
+{
+  "date_formats": {
+    "month_day_year": "%B %d %Y"
+  },
+  "general": {
+    "404": {
+      "page_title": "Page introuvable",
+      "intro": "Nous sommes navrés, mais la page demandée n'est plus disponible.",
+      "return_links_html": "<a href=\"\/\" class=\"text-link\">Cliquez ici<\/a> pour retourner sur le site."
+    },
+    "breadcrumbs": {
+      "home": "Accueil",
+      "collections": "Collections",
+      "product": "Produit",
+      "products": "Produits",
+      "account": "Compte",
+      "register": "Créer un compte",
+      "addresses": "Adresse",
+      "activate_account": "Activer mon compte"
+    },
+    "pagination": {
+      "previous": "Précédent",
+      "next": "Suivant",
+      "page": "Page",
+      "of": "of"
+    },
+    "search": {
+      "articles": "Articles",
+      "no_results": "Aucun résultat ",
+      "products": "Produits",
+      "results_for": "Résultats pour",
+      "search": "Rechercher",
+      "placeholder": "Rechercher sur le site",
+      "search_again": "Nouvelle recherche",
+      "view_all": "Tout voir"
+    },
+    "mailing_list": {
+      "subtitle": "Abonnez-vous à la newsletter du Chef ! ",
+      "placeholder": "Adresse Email",
+      "button": "Valider",
+      "success_message": "Merci pour votre abonnement ! ",
+      "email_blank": "Le champ d'adresse Email est requis"
+    },
+    "password": {
+      "title": "Opening Soon",
+      "sub_title": "This is a message for your visitors, you edit this in your admin",
+      "login_link": "Login",
+      "login_title": "Enter store using password",
+      "login_placeholder": "password",
+      "login_button": "enter",
+      "login_cancel": "Go Back",
+      "powered_by_shopify_html": "This shop will be powered by {{ shopify }}"
+    },
+    "social": {
+      "product_title": "Partagez avec vos amis !",
+      "blog_title": "Partager",
+      "facebook_title": "Partager sur Facebook",
+      "twitter_title": "Partager sur Twitter",
+      "pinterest_title": "Partager sur Pinterest",
+      "google_title": "Partager sur Google Plus",
+      "email_title": "Partager via Email",
+      "link_title": "Copier le lien"
+    }
+  },
+  "layout": {
+    "header": {
+      "follow": "Suivre le Chef ",
+      "account_view_link": "Mon compte",
+      "account_logout_link": "Se déconnecter",
+      "back": "Retour"
+    }
+  },
+  "popup": {
+    "close": "Fermer"
+  },
+  "home": {
+    "play_video": "Lancer la vidéo",
+    "more_details": "En savoir plus",
+    "view_product": "Voir le produit",
+    "view_collection": "Voir la collection",
+    "view_blog": "Voir le blog",
+    "follow_other_feeds": "Suivre d'autres actualités",
+    "news_panel": {
+      "follow_facebook": "Suivre le Chef sur Facebook",
+      "follow_instagram": "Suivre le Chef sur Instagram",
+      "follow_twitter": "Suivre le Chef sur Twitter",
+      "follow_tumblr": "Suivre le Chef sur Tumblr",
+      "follow_blog": "Voir le blog du Chef",
+      "view_facebook": "Voir sur Facebook",
+      "view_instagram": "Voir sur Instagram",
+      "view_twitter": "Voir sur Twitter",
+      "view_tumblr": "Voir sur Tumblr",
+      "view_blog": "Lire plus",
+      "view_other": "Voir plus",
+      "read_more": "En savoir plus"
+    },
+    "onboarding": {
+      "collection_title": "Collection",
+      "product_title": "Produit",
+      "vendor": "Vendeur",
+      "price": "$50.00",
+      "no_content": "Aucun produit",
+      "featured_product": {
+        "compare_price": "$99",
+        "actual_price": "$89",
+        "title": "Produit",
+        "description": "Description"
+      }
+    },
+    "map": {
+      "address": "Adresse",
+      "hours": "Heures d'ouverture",
+      "open_in_maps": "Ouvrir dans maps",
+      "no_api_key_html": "To generate a map, you will need to add a <a href=\"https:\/\/developers.google.com\/maps\/documentation\/javascript\/get-api-key#get-an-api-key\">Google API key<\/a> in the General > Physical store settings. Alternatively you can add a custom image in the Map section settings.",
+      "address_error": "Adresse erronée",
+      "address_no_results": "Aucune adresse",
+      "address_query_limit_html": "You have exceeded the Google API usage limit. Consider upgrading to a <a href=\"https:\/\/developers.google.com\/maps\/premium\/usage-limits\">Premium Plan<\/a>.",
+      "auth_error_html": "There was a problem authenticating your Google Maps account. Create and enable the <a href=\"https:\/\/developers.google.com\/maps\/documentation\/javascript\/get-api-key\">JavaScript API<\/a> and <a href=\"https:\/\/developers.google.com\/maps\/documentation\/geocoding\/get-api-key\">Geocoding API<\/a> permissions of your app."
+    },
+    "newsletter": {
+      "email_placeholder": "Votre email",
+      "success": "Merci pour votre inscription !",
+      "button": "S'inscrire"
+    },
+    "featured_blog": {
+      "title": "Blog article",
+      "read_more": "Read more"
+    },
+    "featured_product": {
+      "was": "Was",
+      "more_info": "Voir le produit"
+    }
+  },
+  "collections": {
+    "sold_out_html": "Sold Out",
+    "from": "A partir de ",
+    "no_products_feedback_html": "You have no products in your Frontpage collection.<br \/><br \/> This placeholder will appear until you <a href=\"\/admin\/collections?tutorial=Frontpage\">add a product to this collection<\/a>.",
+    "no_products_link": "Click here to add some products.",
+    "no_collections_feedback_html": "You have no collections.<br \/><br \/> These placeholders will appear until you <a href=\"\/admin\/collections?tutorial=Frontpage\">add a collection<\/a>.",
+    "no_collections_link": "Click here to add a collection.",
+    "product": "Produit",
+    "products": "Produits",
+    "placeholder": {
+      "price": "$19.99",
+      "title": "Produit",
+      "collection_title": "Collection",
+      "num_items": "50 items"
+    }
+  },
+  "products": {
+    "no_product_feedback_html": "You haven't selected a product yet.<br \/><br \/> Please choose one in the Home page - featured product section of your theme settings.",
+    "add_to_cart": "Ajouter à mon panier",
+    "more_details": "Plus d'informations",
+    "back_on_kickstarter": "",
+    "unavailable_variant": "Cette option est indisponible pour le moment",
+    "sold_out": {
+      "variant": "Cette option est actuellement indisponible.",
+      "product": "Ce produit est actuellement indisponible.",
+      "form_notification": "Merci ! Nous vous indiquerons lorsqu'il sera de nouveau disponible",
+      "form_description": "Si vous souhaitez recevoir une alerte lorsque le produit sera à nouveau disponible, merci de remplir le formulaire.",
+      "feedback_invalid_email": "Merci d'indiquer une adresse Email valide. ",
+      "email_placeholder": "Mon Email",
+      "email_description": "M'envoyer un mail lorsque ce produit est à nouveau disponibles",
+      "button": "Envoyer"
+    }
+  },
+  "cart": {
+    "title": "Mon Panier",
+    "go_to_cart": "Voir mon panier",
+    "empty_html": "<span class=\"colored-links\">Votre panier est vide. <a href=\"\/\">Cliquez ici<\/a> pour continuer vos achats<\/span>",
+    "continue": "Continuer mes achats",
+    "checkout": "Valider ma commande",
+    "update_cart": "Actualiser mon panier",
+    "subtotal": "Sous-total",
+    "remove_item": "Supprimer ce produit",
+    "remove_one_item": "Supprimer un produit",
+    "add_one_item": "Ajouter un produit",
+    "shipping_taxes_notification": "Frais de livraison et taxes calculées à la fin du processus de commande",
+    "order_notes": "Laisser un commentaire"
+  },
+  "blog": {
+    "filtered_by": "Filtered By",
+    "rss": "rss",
+    "article": {
+      "no_articles": "No articles found.",
+      "date": "Date",
+      "back_to_blog": "Back To Blog",
+      "twitter": "Twitter",
+      "written_by": "Written By",
+      "comment": "Comment",
+      "comments": "Comments",
+      "read_more": "Read more",
+      "previous": "Previous",
+      "next": "Next",
+      "tags": "Tags"
+    },
+    "comment": {
+      "title": "Leave a comment",
+      "moderated_notice": "Comments have to be approved before showing up",
+      "moderated_feedback": "Thanks for your comment. It will have to be approved by the blog owner first before showing up.",
+      "success_feedback": "Thank you, your comment has been posted.",
+      "error": "Not all the fields have been filled out correctly.",
+      "your_name": "Your Name",
+      "your_email": "Your Email",
+      "button": "Post Comment"
+    },
+    "sidebar": {
+      "tags": "Tags",
+      "tags_show_all": "All"
+    }
+  },
+  "contact_page": {
+    "success_feedback": "Thanks for contacting us! We'll get back to you shortly.",
+    "error_feedback": "We were unable to send your message, please correct the following:",
+    "name": "Your Name",
+    "email": "Email",
+    "phone": "Phone Number",
+    "message": "Message",
+    "button": "Send"
+  },
+  "customer": {
+    "account": {
+      "page_title": "Mon compte",
+      "orders": "Commandes",
+      "addresses": "Adresses ",
+      "order": "Commande",
+      "date": "Date",
+      "payment_status": "Statut de paiement",
+      "fulfillment_status": "Fulfillment Status",
+      "total": "Total",
+      "no_orders": "You haven't placed any orders yet.",
+      "view_addresses": "View Addresses",
+      "logout": "Logout"
+    },
+    "activate_account": {
+      "page_title": "Activer votre compte",
+      "subtext": "Créez votre mot de passe pour activer votre compte",
+      "password": "Mot de passe",
+      "password_confirm": "Confirmation de mot de passe",
+      "submit": "Activer mon compte",
+      "cancel": "Annuler"
+    },
+    "addresses": {
+      "page_title": "Vos adresses",
+      "default": "Adresse principale",
+      "add_new": "Ajouter une nouvelle adresse",
+      "edit_address": "Editer l'adresse",
+      "first_name": "Prénom",
+      "last_name": "Nom",
+      "company": "Entreprise",
+      "address1": "Adresse ",
+      "address2": "Adresse",
+      "city": "Ville",
+      "country": "Pays",
+      "province": "Province",
+      "zip": "Code postal",
+      "phone": "Téléphone",
+      "set_default": "Mettre comme adresse par défaut",
+      "add": "Ajouter une adresse",
+      "update": "Mettre à jour l'adresse",
+      "cancel": "Annuler",
+      "edit": "Editer",
+      "delete": "Supprimer"
+    },
+    "login": {
+      "page_title": "Se connecter",
+      "email": "Email",
+      "password": "Mot de passe",
+      "forgot_password": "Mot de passe oublié ? ",
+      "new_account": "S'inscrire",
+      "reset_password": "Editer mot de passe",
+      "reset_instructions": "Nous allons vous envoyer un email afin que vous puissiez rééditer votre nouveau mot de passe ",
+      "submit": "Ok",
+      "sign_in": "Se connecter",
+      "cancel": "Annuler",
+      "guest_title": "Se connecter en tant qu'invité",
+      "guest_continue": "Continuer en tant qu'invité"
+    },
+    "order": {
+      "page_title": "Order - {{ name }}",
+      "cancelled": "Commande annulée",
+      "billing_address": "Adresse de facturation",
+      "payment_status": "Statut du paiement",
+      "shipping_address": "Adresse de livraison",
+      "fulfillment_status": "Fulfillment Status",
+      "item": "Item",
+      "product": "Produit",
+      "sku": "SKU",
+      "price": "Prix",
+      "quantity": "Quantité",
+      "total": "Total",
+      "fulfilled_at": "Fulfilled {{ date }}",
+      "subtotal": "Sous-total",
+      "fulfilled": "fulfilled",
+      "unfulfilled": "unfulfilled",
+      "partial": "partial",
+      "paid": "Payé",
+      "pending": "En attente",
+      "authorized": "Autorisé",
+      "abandoned": "Abandonné ",
+      "refunded": "Remboursé",
+      "voided": "voided",
+      "discount": "Discount:",
+      "track_shipment": "Track shipment",
+      "tracking_company": "Société de livraison",
+      "tracking_number": "Numéro de suivi"
+    },
+    "register": {
+      "page_title": "Créer un compte",
+      "first_name": "Prénom",
+      "last_name": "Nom",
+      "email": "Email",
+      "password": "Mot de passe",
+      "submit": "Créer un compte",
+      "login": "Se connecter à un compte existant"
+    },
+    "reset_password": {
+      "page_title": "Formulaire de réédition du mot de passe",
+      "password": "Nouveau mot de passe",
+      "password_confirmation": "Confirmation du nouveau mot de passe",
+      "submit": "Rééditer le mot de passe "
+    }
+  },
+  "gift_cards": {
+    "issued": {
+      "title": "Here's your {{ value }} gift card for {{ shop }}!",
+      "subtext": "Here's your gift card!",
+      "disabled": "Disabled",
+      "expired": "Expired on {{ expiry }}",
+      "active": "Expires on {{ expiry }}",
+      "redeem": "Use this code at checkout to redeem your gift card",
+      "shop_link": "Start shopping",
+      "print": "Print",
+      "left": "left"
+    }
+  },
+  "pagefly": {
+    "products": {
+      "product": {
+        "regular_price": "Regular price",
+        "sold_out": "Sold out",
+        "unavailable": "Unavailable",
+        "on_sale": "Sale",
+        "quantity": "Quantity",
+        "add_to_cart": "Add to cart",
+        "back_to_collection": "Back to {{ title }}",
+        "view_details": "View details"
+      }
+    },
+    "article": {
+      "tags": "Tags:",
+      "all_topics": "All topics",
+      "by_author": "by {{ author }}",
+      "posted_in": "Posted in",
+      "read_more": "Read more",
+      "back_to_blog": "Back to {{ title }}"
+    },
+    "comments": {
+      "title": "Leave a comment",
+      "name": "Name",
+      "email": "Email",
+      "message": "Message",
+      "post": "Post comment",
+      "moderated": "Please note, comments must be approved before they are published",
+      "success_moderated": "Your comment was posted successfully. We will publish it in a little while, as our blog is moderated.",
+      "success": "Your comment was posted successfully! Thank you!",
+      "comments_with_count": {
+        "one": "{{ count }} comment",
+        "other": "{{ count }} comments"
+      }
+    },
+    "password_page": {
+      "login_form_message": "Enter store using password:",
+      "login_form_password_label": "Password",
+      "login_form_password_placeholder": "Your password",
+      "login_form_submit": "Enter",
+      "signup_form_email_label": "Email",
+      "signup_form_success": "We will send you an email right before we open!",
+      "password_link": "Enter using password"
+    }
+  },
+  "shopify": {
+    "checkout": {
+      "review": {
+        "blocks": {
+          "billing_address_title": "Adresse de facturation",
+          "shipping_address_title": "Adresse de livraison",
+          "shipping_method_title": "Mode de livraison",
+          "payment_method_title": "Mode de paiement",
+          "change_contact_method_link_label": "Changer mes informations",
+          "change_billing_address_link_label": "Changer mon adresse de facturation",
+          "change_shipping_address_link_label": "Changer mon adresse de livraison",
+          "change_shipping_method_link_label": "Changer mon mode de livraison",
+          "change_payment_method_link_label": "Changer mon mode de paiement",
+          "change_link_label": "Changer"
+        },
+        "title": "Résumé de commande"
+      },
+      "general": {
+        "page_title": "Résumé de commande",
+        "continue_button_label": "Continuer",
+        "complete_purchase_button_label": "Valider la commande",
+        "authenticate_purchase_button_label": "Authentification ",
+        "edit_link_label": "Editer",
+        "all_rights_reserved": "Tous droits réservés ",
+        "print_policies_link_label": "Imprimer les CGV",
+        "cart": "Carte",
+        "close_modal_label": "Fermer",
+        "close_notice_label": "Fermer",
+        "expand_notice_label": "Voir plus ",
+        "continue_to_shipping_method": "Continuer vers le mode de livraison",
+        "continue_to_payment_method": "Continuer vers le mode de paiement",
+        "continue_to_review": "Continuer vers le récapitulatif de commande",
+        "back_to_shipping_method": "Retourner vers le mode de livraison",
+        "back_to_payment_method": "Retourner vers le mode de paiement",
+        "back_to_contact_information": "Retourner vers vos informations client",
+        "choose_shipping_method": "Choisir le mode de livraison",
+        "choose_payment_method": "Choisir le mode de paiement",
+        "choose_billing_address": "Choisir l'adresse de facturation",
+        "contact_us_html": "Contactez-nous",
+        "autocomplete_title": "Suggestions",
+        "autocomplete_single_item": "1 produit disponible",
+        "forwarding_indicator": {
+          "new_window": "Ouvrir dans une nouvelle fenêtre",
+          "external": "Ouvrir un lien externe",
+          "external_and_new_window": "Ouvrir un lien externe dans une nouvelle fenêtre"
+        },
+        "back_to_cart": "Retourner au panier"
+      },
+      "contact": {
+        "title": "Vos informations",
+        "address_title": "Adresse",
+        "country_placeholder": "Pays",
+        "shipping_address_title": "Adresse de livraison",
+        "contact_method_title": "Vos coordonnées",
+        "email_label": "Email",
+        "email_placeholder": "Email",
+        "email_or_phone_label": "Email ou téléphone fixe",
+        "email_or_phone_placeholder": "Email ou téléphone portable",
+        "new_address_label": "Entrer une nouvelle adresse",
+        "first_name_label": "Prénom",
+        "first_name_placeholder": "Prénom",
+        "last_name_label": "Nom",
+        "last_name_placeholder": "Nom",
+        "company_label": "Entreprise",
+        "company_placeholder": "Entreprise",
+        "address1_label": "Adresse",
+        "address1_placeholder": "Adresse",
+        "address2_label": "N° d'appartement, etc.",
+        "optional_address2_label": "N° d'appartement, etc. (facultatif)",
+        "address2_placeholder": "N° d'appartement, etc.",
+        "optional_address2_placeholder": "N° d'appartement, etc. (facultatif)",
+        "city_label": "Ville",
+        "city_placeholder": "Ville",
+        "country_label": "Pays",
+        "country_code": "Code postal",
+        "province_label": "Département",
+        "province_placeholder": "Département",
+        "county_label": "Pays",
+        "county_placeholder": "Pays",
+        "state_label": "Région",
+        "state_placeholder": "Région",
+        "region_label": "Région",
+        "region_placeholder": "Région",
+        "phone_label": "N° Téléphone",
+        "optional_phone_label": "N° Téléphone (facultatif)",
+        "phone_placeholder": "N° Téléphone",
+        "optional_phone_placeholder": "N° Téléphone (facultatif)",
+        "zip_code_label": "Code postal",
+        "zip_code_placeholder": "Code postal",
+        "postal_code_label": "Code postal",
+        "postal_code_placeholder": "Code postal",
+        "postcode_label": "Code postal",
+        "postcode_placeholder": "Code postal"
+      },
+      "customer_account": {
+        "have_an_account_label": "Déjà client ? ",
+        "sign_in_link_label": "Se connecter",
+        "sign_out_link_label": "Déconnexion",
+        "save_my_information_label": "Sauvegarder mes informations pour ma prochaine visite"
+      },
+      "stock": {
+        "title": "Victime de son succès ! Ce produit n'est plus disponible",
+        "items_unavailable_notice": "Certains produits ne sont plus disponibles ! Votre panier à été mis à jour ",
+        "quantity_column_header": "Quantité",
+        "product_column_header": "Produits",
+        "price_column_header": "Prix",
+        "status_column_header": "Statut",
+        "removed_from_cart_notice": "Retiré du panier",
+        "sold_out_label": "Victime de son succès ! Ce produit n'est plus disponible",
+        "remove_from_cart_button_label": "Supprimer du panier",
+        "continue_shopping_button_label": "Continuer",
+        "go_back_to_cart_button_label": "Retourner à mon panier"
+      },
+      "order_payment_collection": {
+        "pay_now": "Payer "
+      },
+      "remember_me": {
+        "modal": {
+          "footer": " "
+        }
+      }
+    },
+    "sentence": {
+      "words_connector": ",",
+      "two_words_connector": "et",
+      "last_word_connector": ", et"
+    },
+    "dates": {
+      "month_names": {
+        "december": "Décembre",
+        "november": "Novembre",
+        "october": "Octobre",
+        "september": "Septembre",
+        "august": "Août",
+        "july": "Juillet",
+        "june": "Juin",
+        "may": "Mai",
+        "april": "Avril",
+        "march": "Mars",
+        "february": "Février",
+        "january": "Janvier"
+      },
+      "abbr_month_names": {
+        "december": "Déc",
+        "january": "Jan",
+        "february": "Fév",
+        "march": "Mar",
+        "april": "Avr",
+        "may": "Mai",
+        "june": "Juin",
+        "july": "Jui",
+        "august": "Août",
+        "september": "Sept",
+        "october": "Oct",
+        "november": "Nov"
+      },
+      "day_names": {
+        "sunday": "Dimanche",
+        "monday": "Lundi",
+        "tuesday": "Mardi",
+        "wednesday": "Mercredi",
+        "thursday": "Jeudi",
+        "friday": "Vendredi",
+        "saturday": "Samedi"
+      },
+      "abbr_day_names": {
+        "sunday": "Dim",
+        "monday": "Lun",
+        "tuesday": "Mar",
+        "wednesday": "Mer",
+        "thursday": "Jeu",
+        "friday": "Ven",
+        "saturday": "Sam"
+      },
+      "am": "matin",
+      "pm": "après-midi"
+    },
+    "links": {
+      "powered_by_shopify": " "
+    }
+  }
+}

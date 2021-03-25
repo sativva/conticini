@@ -1,0 +1,99 @@
+  <!-- DON't CHANGE ANYTHING HERE - IT WILL BE ERASED ON THE NEXT UPDATE -->
+  <!-- YOU CAN SET-it up in URBIT APP -->
+  {% assign enable_urbit = true %}
+  {% for item in cart.items %}
+    {% if item.product.tags contains 'not-urbit' or item.product.tags contains 'not_urbit' %}
+      {% assign enable_urbit = false %}
+    {% endif %}
+  {% endfor %}
+
+  {% if enable_urbit %}
+
+    <div id="urbit" class="urbit" data-urbit-custom="{{custom_urbit}}">
+
+    <script async="true"  src="{{ 'urbit.js' | asset_url }}"></script>
+
+    {{ 'urbit.css' | asset_url | stylesheet_tag }}
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/shopify-cartjs/0.4.3/cart.min.js"></script>
+
+    <div id="bikeDelivery" class="urbit-btn tooltip">
+      <span class="tooltiptext">Local delivery around our shop</span>
+      <div id="Logo"><img src="https://cdn.shopify.com/s/files/1/0314/8539/4988/files/urbit-logo.png?v=1592466342" height="35px" alt=""><p>Local Delivery</p></div>
+    </div>
+    <div id="postal_shipping" class="urbit-btn tooltip">
+      <span class="tooltiptext">Postal Shipping</span>
+      <div id="Logo"><img src="https://cdn.shopify.com/s/files/1/0314/8539/4988/files/shipping-logo.png?v=1592466341" height="35px" alt=""><p>Postal Shipping</p></div>
+    </div>
+    <div id="store_pickup" class="urbit-btn tooltip">
+      <span class="tooltiptext">Ramassage en magasin</span>
+      <div id="Logo"><img src="https://cdn.shopify.com/s/files/1/0314/8539/4988/files/store-pickup-logo.png?v=1592466340" height="35px" alt=""><p>Store pickup</p></div>
+    </div>
+
+    <div class="address-modal modal">
+      <div id="address">
+        <form action="">
+        <label for="u_name">First Name & Last Name</label>
+        <input  type="text" required name="u_name" value="{% if customer %} customer.name {% endif %}">
+        <span class="error">Names are required</span>
+
+        <label for="u_address">Address</label>
+        <input  type="text" required name="u_address">
+        <span class="error">A valid address is required</span>
+
+        <label for="u_address2">Address</label>
+        <input  type="text" name="u_address2">
+
+        <label for="u_message">Other informations</label>
+        <input  type="text" name="u_message">
+
+        <label for="u_zip">Zip code</label>
+        <input  type="text" required name="u_zip">
+        <span class="error">A valid zip code is required</span>
+
+        <label for="u_city">City</label>
+        <input  type="text" required name="u_city">
+        <span class="error">A valid city is required</span>
+
+        <label for="u_phone">Phone (+44...)</label>
+        <input  type="tel" maxlength="13" required name="u_phone">
+        <span class="error">A valid phone is required</span>
+
+        <label for="u_email">Email</label>
+        <input  type="text" required name="u_email">
+        <span class="error">A valid email address is required</span>
+
+        <br>
+        <!-- <input type="submit" class="hidden" value="Valider"> -->
+        </form>
+        <button class="validate_address btn button" >Validate</button>
+
+      </div>
+    </div>
+    <div class="urbit-modal modal">
+      <img src="https://cdn.shopify.com/s/files/1/0314/8539/4988/files/Rolling-1s-200px.gif?v=1592404281" class="modal-loader" style="display: none">
+      <div class="pickers_container">
+        <div id="datepicker"></div>
+        <div id="timepicker"></div>
+      </div>
+
+
+      <button class="validate_time btn button" style="display: none">Validate</button>
+
+    </div>
+
+    <div class="checkout-modal modal">
+      <img src="https://cdn.shopify.com/s/files/1/0314/8539/4988/files/Rolling-1s-200px.gif?v=1592404281" class="modal-loader" style="display: none">
+
+      <div id='urbit-checkout'>
+      </div>
+    </div>
+    <div class="outside-delivery-modal modal">
+      <img src="https://cdn.shopify.com/s/files/1/0314/8539/4988/files/Rolling-1s-200px.gif?v=1592404281" class="modal-loader" style="display: none">
+
+      <div><h2>Unfortunatly, we cannot deliver your address</h2></div>
+    </div>
+</div>
+
+
+  {% endif %}

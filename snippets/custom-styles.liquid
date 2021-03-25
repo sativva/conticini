@@ -1,0 +1,51 @@
+<style>
+
+/* Add Your Custom Styles Here */
+
+  
+/* Troop - Collection page filter quick fix - 24/03/19 */
+#shopify-section-collection {
+  width: 95%;
+  margin: 0 auto;
+}
+  
+/* Troop - Allow for adjustable header height - 26/03/19 */
+.layout--header {
+  height: auto;
+}
+.layout--header[data-header--logo-type="overflowing"] .fw--logo {
+  top: 0;
+}
+.layout--header .right-side {
+    top: 50%;
+    transform: translateY(-50%);
+}
+.layout--header .left-side {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+  
+/* Troop - header spacing on mobile - 26/03/19 */
+@media only screen and (max-width: 767px){
+  .layout--header {
+      padding-top: 10px;
+      padding-bottom: 10px;
+  }
+}
+  
+ 
+  /* Popup - Removed newsletter form */
+  
+  .popup--newsletter-form {
+    display: none;
+}
+
+/*Troop - Fix newsletter text*/
+div#newsletter:before {
+    content: "Inscrivez vous à la Newsletter du Chef et bénéficiez de concours pour être invité à un atelier!";
+    font-size: 12px;
+}
+
+
+</style>
